@@ -1,0 +1,8 @@
+
+/TestNotebooks/results
+/tmp
+/tuned_model
+/tuned_tokenizer
+/temp
+/t5_output
+/__pycache__
