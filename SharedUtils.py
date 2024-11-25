@@ -34,11 +34,11 @@ def evaluate_and_save_metrics(dir_name, run_name, model_name, reference_summarie
     bleu = evaluate.load('bleu')
     results_bleu = bleu.compute(predictions=generated_summaries, references=reference_summaries)
     
-    with open(f"./results/{dir_name}/{run_name}/gpt_{model_name}_rouge_results.json", "w") as f:
+    with open(f"./results/{dir_name}/{run_name}/{model_name}_rouge_results.json", "w") as f:
         json.dump(rouge_results, f)
-    with open(f"./results/{dir_name}/{run_name}/gpt_{model_name}_bleu_results.json", "w") as f:
+    with open(f"./results/{dir_name}/{run_name}/{model_name}_bleu_results.json", "w") as f:
         json.dump(results_bleu, f)
-    with open(f"./results/{dir_name}/{run_name}/gpt_{model_name}_time.txt", "w") as f:
+    with open(f"./results/{dir_name}/{run_name}/{model_name}_time.txt", "w") as f:
         f.write(f"{elapsed_time}\n")
 
     return rouge_results, results_bleu 
